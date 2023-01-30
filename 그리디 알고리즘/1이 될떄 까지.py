@@ -1,22 +1,20 @@
-#1. n에서 1을 뺍니다
-#2. n에서 k로 나눕니다
-def solution(n, k):
-    count = 0
-    while True:
-        #n이 k로 나누어 떨어지는 수가 될 떄까지 뺴기
-        target = (n//k)*k
-        count += (n-target)
-        n = target
-
-        #n이 k보다 작을떄(더이상 못나누면) 반복분 탈출
-        if n < k:
-            break
-
-        #k로 나누기
-        n = n//k
-        count +=1
-        #print(n)
-    
-    count += n-1
-    return count
-print(solution(25,5))
+# <문제> 1이 될때까지
+#어떤 수 N이 1이 될떄 까지 다음의 두 과정 중 하나를 반복적으로
+#선택하여 수행하려고 합니다 단. 두번쨰는 N이 K로 나누어 떨어질 떄만 선택 가능
+# 1.N에서 1을 뺍니다.
+# 2.N에서 K로 나눕니다.
+def solution(n,k):
+    answer = 0
+    #반복문 n이 1이 될떄까지
+    while n != 1:
+        #나누어 떨어지면 나누기
+        if n%k == 0:
+            n=n//k
+            answer+=1
+        #나누어 떨지지 않으면 n은 나누어 떨어지는수
+        #그리고 n-((n//k)*4)을 해줌으로써 한번에 카운트
+        else:
+            n = (n//k)*4
+            answer += n-((n//k)*4)
+    print(answer)
+solution(25,5)
