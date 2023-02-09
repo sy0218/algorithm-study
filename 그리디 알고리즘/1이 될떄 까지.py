@@ -14,7 +14,8 @@ def solution(n,k):
         #나누어 떨지지 않으면 n은 나누어 떨어지는수
         #그리고 n-((n//k)*4)을 해줌으로써 한번에 카운트
         else:
-            n = (n//k)*4
-            answer += n-((n//k)*4)
+            num = (n//k)*k
+            answer += n-num
+            n = num
     print(answer)
-solution(25,5)
+solution(27,4)

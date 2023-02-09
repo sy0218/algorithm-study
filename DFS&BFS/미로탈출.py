@@ -13,9 +13,11 @@ graph = []
 for i in range(n):
     graph.append(list(map(int, input())))
 
+print(graph)
+
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
-
+'''
 def bfs(x,y):
     
     queue = deque()
@@ -40,3 +42,4 @@ def bfs(x,y):
     return graph
 
 print(bfs(0,0))
+'''
